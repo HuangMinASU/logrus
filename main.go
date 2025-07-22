@@ -17,7 +17,7 @@ func FormatJSON(message string) (string, error) {
 	if err := json.Unmarshal([]byte(message), &jsonData); err != nil {
 		return fmt.Sprintf("[String] %s", message), nil
 	}
-
+	//"{\"anotherField\":\"value\",\"nestedField\":{\"keyToModify\":\"22543******\"}}"
 	// 脱敏处理
 	DesensitizeData(jsonData, "keyToModify")
 	DesensitizeData(jsonData, "event=")
